@@ -1,15 +1,18 @@
 package com.kolanvs.epamtutor.beans;
 
+import java.util.List;
+
 public class Project {
     private String name;
-    private Developer teamLead;
+    private List<Object> engineers;
 
     public Project() {
     }
 
-    public Project(String name, Developer teamLead) {
+    public Project(String name, List<Object> engineers) {
         this.name = name;
-        this.teamLead = teamLead;
+        this.engineers = engineers;
+        System.out.println("i'm from Project constructor");
     }
 
     public String getName() {
@@ -20,19 +23,24 @@ public class Project {
         this.name = name;
     }
 
-    public Developer getTeamLead() {
-        return teamLead;
+    public List<Object> getEngineers() {
+        return engineers;
     }
 
-    public void setTeamLead(Developer teamLead) {
-        this.teamLead = teamLead;
+    public void setEngineers(List<Object> engineers) {
+        this.engineers = engineers;
     }
 
     @Override
     public String toString() {
         return "Project{" +
                 "name='" + name + '\'' +
-                ", teamLead=" + teamLead +
+                ", engineers=" + engineers +
                 '}';
+    }
+
+    public void initProject() {
+        System.out.println("Check budget for " + engineers.size() + " engineers");
+        System.out.println("Check staging");
     }
 }
