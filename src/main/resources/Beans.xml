@@ -1,0 +1,47 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd ">
+
+    <bean id="dev" class="com.kolanvs.epamtutor.beans.Developer">
+        <constructor-arg value="Nikkolas"/>
+        <constructor-arg value="Java"/>
+        <constructor-arg value="10" />
+        <constructor-arg value="true" />
+    </bean>
+
+    <bean id="intern" class="com.kolanvs.epamtutor.beans.Developer">
+        <constructor-arg value="Vasya" />
+    </bean>
+
+    <bean id="dotNetDev" class="com.kolanvs.epamtutor.beans.Developer">
+        <constructor-arg index="1" value="C#" />
+        <constructor-arg index="0" value="Lena" />
+        <constructor-arg value="2" />
+        <constructor-arg value="true" />
+    </bean>
+
+    <bean id="anon" class="com.kolanvs.epamtutor.beans.Developer">
+        <constructor-arg value="15" type="int"/>
+    </bean>
+
+    <bean id="newProject" name="taxiBumer ololoTaxi taxiNett" class="com.kolanvs.epamtutor.beans.Project">
+        <constructor-arg value="taxiBumer" />
+        <constructor-arg ref="dev" />
+    </bean>
+
+    <bean id="teamLead" class="com.kolanvs.epamtutor.beans.Developer">
+        <constructor-arg value="Sergey Brykov"/>
+        <constructor-arg value="C++"/>
+        <constructor-arg value="80" />
+        <constructor-arg value="true" />
+    </bean>
+
+    <bean id="java_10" name="mayBeLater" class="com.kolanvs.epamtutor.beans.Project">
+        <property name="name" value="J10-early" />
+        <property name="teamLead" ref="teamLead" />
+    </bean>
+
+</beans>
+
